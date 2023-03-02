@@ -2,6 +2,7 @@
 	"name": "vscode-helloworld-extension",
 	"displayName": "vscode-helloworld-extension",
 	"description": "HelloWorld example for VS Code",
+	"repository": "github.com/imgtech"
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.74.0"
