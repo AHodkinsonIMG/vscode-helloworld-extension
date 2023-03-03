@@ -1,5 +1,7 @@
 version: 1.0.{build}
-build_cloud: mac-a-hodkinson.local
+build_cloud: Process
+build:
+  verbosity: normal
 image: macOS-Monterey
 init:
 - sh: npm -g install vsce
