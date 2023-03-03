@@ -1,0 +1,26 @@
+version: 1.0.{build}
+image: macOS-Monterey
+init:
+- sh: npm -g install vsce
+install:
+- sh: npm install
+build_script:
+- sh: >-
+    npm run compile
+
+    vsce package
+
+    uname -a >> platform.txt
+
+    sw_vers >> platform.txt
+artifacts:
+- path: '*.vsix'
+- path: platform.txt
+notifications:
+- provider: Email
+  to:
+  - allan.hodkinson@imgtec.com
+  subject: Build monitor
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false
