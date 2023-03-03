@@ -21,8 +21,7 @@ artifacts:
 - path: platform.txt
 notifications:
 - provider: Email
-  to:
-  - allan.hodkinson@imgtec.com
+  to: allan.hodkinson@imgtec.com
   subject: appveyor-helloworld build
   on_build_success: true
   on_build_failure: true
