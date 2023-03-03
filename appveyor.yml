@@ -1,5 +1,5 @@
 version: 1.0.{build}
-build_cloud: Process
+build_cloud: Docker
 build:
   verbosity: normal
 init:
