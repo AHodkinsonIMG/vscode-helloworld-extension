@@ -1,5 +1,6 @@
 version: 1.0.{build}
-build_cloud: Docker
+build_cloud: allan-VirtualBox
+image: Linux
 build:
   verbosity: normal
 init:
