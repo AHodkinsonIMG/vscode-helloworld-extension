@@ -4,14 +4,14 @@ image: Linux
 build:
   verbosity: normal
 init:
-- sh: npm -g install vsce
+- sh: npm install vsce
 install:
 - sh: npm install
 build_script:
 - sh: >-
     npm run compile
 
-    vsce package
+    npx vsce package
 
     uname -a >> platform.txt
 
