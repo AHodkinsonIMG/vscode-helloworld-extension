@@ -33,4 +33,10 @@ steps:
 
 - script: |
     npx vsce package
-  displayName: 'Package'  
+  displayName: 'Package'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifactType: 'pipeline'
+    artifactName: '*.vsix'
+  displayName: 'Publish artifact'      
