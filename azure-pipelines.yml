@@ -6,8 +6,17 @@
 trigger:
 - main
 
+strategy:
+  matrix:
+    linux:
+      imageName: 'ubuntu-latest'
+    mac:
+      imageName: 'macOS-latest'
+    windows:
+      imageName: 'windows-latest'
+
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(imageName)
 
 steps:
 - task: NodeTool@0
@@ -34,9 +43,10 @@ steps:
 - script: |
     npx vsce package
   displayName: 'Package'
+
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Pipeline.Workspace)'
-    artifactType: 'pipeline'
-    artifactName: 'vscode-helloworld-extension-0.0.1.vsix'
+    artifactType: 'filepath'
+    artifactName: './*.vsix'
   displayName: 'Publish artifact'      
