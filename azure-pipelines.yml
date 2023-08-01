@@ -17,5 +17,20 @@ steps:
 
 - script: |
     npm install
+  displayName: 'NPM install'
+
+- script: |
+    npm run lint
+  displayName: 'Lint'
+
+- script: |
     npm run build
   displayName: 'Build'
+
+- script: |
+    npm run test
+  displayName: 'Test'
+
+- script: |
+    npx vsce package
+  displayName: 'Package'  
