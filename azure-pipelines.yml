@@ -48,4 +48,4 @@ steps:
   inputs:
     targetPath: '$(Pipeline.Workspace)'
     artifactName: 'vscode-helloworld-extension-0.0.1.vsix'
-  displayName: 'Publish artifact'      
+  displayName: 'Publish artifact'
